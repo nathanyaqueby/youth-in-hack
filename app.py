@@ -6,7 +6,8 @@ from fastai.vision.all import *
 st.title("Hello World")
 
 # load the fastai model
-learn = load_learner('export.pkl')
+export_path = pathlib.Path('export.pkl')
+learn = load_learner(export_path)
 
 # create a file uploader
 uploader = st.file_uploader("Upload an image...", type=["jpg","jpeg","png"])
