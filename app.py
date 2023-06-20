@@ -7,6 +7,8 @@ from fastai.vision.all import *
 st.title("Hello World")
 
 # load the fastai model
+plt = platform.system()
+if plt == 'Linux': pathlib.WindowsPath = pathlib.PosixPath
 export_path = pathlib.Path('export.pkl')
 learn = load_learner(export_path)
 
