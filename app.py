@@ -18,10 +18,10 @@ uploader = st.file_uploader("Upload an image...", type=["jpg","jpeg","png"])
 # create a button
 if st.button("Predict"):
     # read the image
-    img = Image.create(uploader)
-    # make a prediction
+    img = PILImage.create(uploader)
+    # predict the image
     pred, pred_idx, probs = learn.predict(img)
+    # display the image
+    st.image(img)
     # display the prediction
     st.write(f"Prediction: {pred}; Probability: {probs[pred_idx]:.04f}")
-    # display the image
-    st.image(img.to_thumb(500,500), caption='Uploaded Image')
